@@ -47,16 +47,21 @@ table {
 
 .header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
   border-top: solid 10px orangered;
   background-color: black;
   color: white; }
+  @media (min-width: 450px) {
+    .header {
+      align-items: center;
+      flex-direction: row; } }
 
 .header__logo {
-  margin: 0 5px;
+  margin: 15px;
+  font-family: Arial, sans-serif;
   font-size: 50px;
-  font-family: sans-serif; }
+  line-height: 38px; }
 
 .nav__list {
   position: absolute;
@@ -67,9 +72,8 @@ table {
 
 .nav__hiddenCheckbox {
   display: none; }
-
-.nav__hiddenCheckbox:checked + .nav__list {
-  visibility: visible; }
+  .nav__hiddenCheckbox:checked + .nav__list {
+    visibility: visible; }
 
 .nav__item {
   border-bottom: solid 1px lightgray;
@@ -79,8 +83,8 @@ table {
 
 .nav__menu {
   position: relative;
+  max-width: 400px;
   width: 100%;
-  padding-bottom: 5px;
   border: none;
   background-color: black; }
 
@@ -88,7 +92,7 @@ table {
   display: block;
   width: 40px;
   height: 40px;
-  margin: 0 5px 5px 5px;
+  margin: 5px;
   border: none;
   padding: 0;
   background-color: black;
@@ -99,15 +103,17 @@ table {
   cursor: pointer; }
 
 .callToAction {
-  margin: 5px;
+  position: absolute;
+  right: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center; }
+
+.callToAction__text {
+  font-family: Arial, sans-serif;
   font-size: 20px;
-  font-family: sans-serif;
   font-stretch: condensed;
   text-align: center; }
 
 .callToAction__arrow {
-  width: 70px;
-  position: absolute;
-  z-index: 20;
-  right: 70px;
-  top: 0; }
+  width: 70px; }

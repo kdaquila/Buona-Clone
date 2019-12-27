@@ -2,17 +2,24 @@
 
 .header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
   border-top: solid 10px orangered;
   background-color: black;
   color: white;
+
+  @media (min-width: 450px) {
+      align-items: center;
+      flex-direction: row;
+  }
 }
 
 .header__logo {
-  margin: 0 5px;
-  font-size: 50px;
-  font-family: sans-serif;
+  margin: 15px;
+  font-family: Arial, sans-serif;
+  $font-size: 50px;
+  font-size: $font-size;
+  line-height: 0.76 * $font-size;
 }
 
 .nav__list {
@@ -40,8 +47,8 @@
 
 .nav__menu {
   position: relative;
+  max-width: 400px;
   width: 100%;
-  padding-bottom: 5px;
   border: none;
   background-color: black;
 }
@@ -50,7 +57,7 @@
   display: block;
   width: 40px;
   height: 40px;
-  margin: 0 5px 5px 5px;
+  margin: 5px;
   border: none;
   padding: 0;
   background-color: black;
@@ -62,18 +69,21 @@
 }
 
 .callToAction {
-  margin: 5px;
+  position: absolute;
+  right: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+}
+
+.callToAction__text {
+  font-family: Arial, sans-serif;
   font-size: 20px;
-  font-family: sans-serif;
   font-stretch: condensed;
   text-align: center;
 }
 
 .callToAction__arrow {
   width: 70px;
-  position: absolute;
-  z-index: 20;
-  right: 70px;
-  top: 0;
 }
 
