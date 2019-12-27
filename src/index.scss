@@ -1,0 +1,79 @@
+@import "reset";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: solid 10px orangered;
+  background-color: black;
+  color: white;
+}
+
+.header__logo {
+  margin: 0 5px;
+  font-size: 50px;
+  font-family: sans-serif;
+}
+
+.nav__list {
+  position: absolute;
+  visibility: hidden;
+  widtH: 100%;
+  background-color: black;
+  color: goldenrod;
+}
+
+.nav__hiddenCheckbox {
+  display: none;
+
+  &:checked + .nav__list {
+    visibility: visible;
+  }
+}
+
+.nav__item {
+  border-bottom: solid 1px lightgray;
+  padding: 15px;
+  font-family: sans-serif;
+  font-size: 12px;
+}
+
+.nav__menu {
+  position: relative;
+  width: 100%;
+  padding-bottom: 5px;
+  border: none;
+  background-color: black;
+}
+
+.nav__menuButton {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: 0 5px 5px 5px;
+  border: none;
+  padding: 0;
+  background-color: black;
+  background-image: url("./images/MenuButton.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  cursor: pointer;
+}
+
+.callToAction {
+  margin: 5px;
+  font-size: 20px;
+  font-family: sans-serif;
+  font-stretch: condensed;
+  text-align: center;
+}
+
+.callToAction__arrow {
+  width: 70px;
+  position: absolute;
+  z-index: 20;
+  right: 70px;
+  top: 0;
+}
+
