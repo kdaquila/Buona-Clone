@@ -1,4 +1,5 @@
 @import "reset";
+@import "media";
 
 .header {
   display: flex;
@@ -8,7 +9,7 @@
   background-color: black;
   color: white;
 
-  @media (min-width: 450px) {
+  @media (min-width: $breakpoint__header__nav) {
       align-items: center;
       flex-direction: row;
   }
@@ -22,12 +23,45 @@
   line-height: 0.76 * $font-size;
 }
 
+.nav {
+  position: relative;
+  max-width: 800px;
+  width: 100%;
+  border: none;
+  background-color: black;
+}
+
+.nav__menuButton {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: 15px;
+  border: none;
+  padding: 0;
+  background-color: black;
+  background-image: url("./images/MenuButton.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  cursor: pointer;
+
+  @media (min-width: $breakpoint__header__nav) {
+    display: none;
+  }
+}
+
 .nav__list {
   position: absolute;
   visibility: hidden;
-  widtH: 100%;
+  width: 100%;
   background-color: black;
   color: goldenrod;
+
+  @media (min-width: $breakpoint__header__nav) {
+    visibility: visible;
+    position: static;
+    display: flex;
+  }
 }
 
 .nav__hiddenCheckbox {
@@ -43,40 +77,32 @@
   padding: 15px;
   font-family: sans-serif;
   font-size: 12px;
-}
 
-.nav__menu {
-  position: relative;
-  max-width: 400px;
-  width: 100%;
-  border: none;
-  background-color: black;
-}
+  @media (min-width: $breakpoint__header__nav) {
+    border: none;
+    padding: 0 15px;
+    border-right: 1px solid goldenrod;
+  }
 
-.nav__menuButton {
-  display: block;
-  width: 40px;
-  height: 40px;
-  margin: 5px;
-  border: none;
-  padding: 0;
-  background-color: black;
-  background-image: url("./images/MenuButton.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  cursor: pointer;
+  &:hover {
+    background-color: #292929;
+  }
+
+  &:active {
+    background-color: #8a8a8a;
+  }
 }
 
 .callToAction {
   position: absolute;
+  top: -5px;
   right: 0;
   z-index: 20;
   display: flex;
-  align-items: center;
 }
 
 .callToAction__text {
+  margin: 25px 15px 15px 5px;
   font-family: Arial, sans-serif;
   font-size: 20px;
   font-stretch: condensed;
